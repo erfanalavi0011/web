@@ -1,0 +1,137 @@
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+/* Setting content width, unsetting floats and margins */
+/* Attention: the classes and IDs vary from theme to theme. Thus, set own classes here */
+
+@media print {
+    .neighborhood-detail,
+    .post-content {
+      width: 100%; 
+      margin: 0; 
+      float: none;
+    }
+
+    /** Setting margins */       
+    @page { margin: 2cm }
+    body {
+      font: 13pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      background: #fff !important;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 24pt;
+    }
+
+    h2, h3, h4 {
+      font-size: 14pt;
+      margin-top: 25px;
+    }
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+    /*
+     * Content Visibility Blog
+     * 
+     */
+     .blog-masthead{display:none !important;}
+     footer.blog{display:none !important;}
+     /*
+     * Content Visibility New Construction
+     * 
+     */
+     footer.new-construction{display:none !important;}
+     header.new-construction-masthead{display:none !important;}
+     .new-construction-detail-sidebar{display:none !important;}
+     .related-properties{display:none !important;}
+     .utility-header{display:none !important;}
+     .new-construction-print-featured-image{display:block !important;}
+     .new-construction-print-logo{display:block !important;}
+     .tab-navigation.desktop{display:none !important;}
+     .tab-navigation.mobile{display:none !important;}
+     .tab-content.videos{display:none !important;}
+     .tab-content.map{display:block !important;}
+     .tab-content.gallery{display:block !important;}
+     .tab-content.files{display:none !important;}
+     .side-bar{display:none !important;}
+     .homes-nearby{display:none !important;}
+     .prop-map{width:240px; height:240px;}
+}
